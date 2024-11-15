@@ -1,0 +1,21 @@
+[project]
+name = "azcam-mock"
+version = "24.0"
+description = "Azcam environment for testing (mocking)"
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["ccd", "imaging", "astronomy", "sensors"]
+authors = [{ name = "Michael Lesser" }, { email = "mlesser@arizona.edu" }]
+dependencies = ["ipython", "rich", "azcam", "azcam-console"]
+
+[project.urls]
+Documentation = "https://azcam.readthedocs.io/"
+Repository = "https://github.com/mplesser/azcam-mock/"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.module]
+name = "azcam_mock"
