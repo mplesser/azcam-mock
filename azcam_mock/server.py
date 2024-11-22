@@ -52,7 +52,7 @@ def setup():
     # logfile = os.path.join(azcam.db.datafolder, "logs", "server.log")
     # azcam.db.logger.start_logging(logfile=logfile)
     azcam.db.logger.start_logging()
-    azcam.log(f"Configuring console for {azcam.db.systemname}")
+    azcam.log(f"Configuring server for {azcam.db.systemname}")
 
     # controller
     controller = Controller()
