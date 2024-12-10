@@ -15,6 +15,7 @@ from azcam_console.tools import create_console_tools
 import azcam_console.shortcuts
 from azcam.tools.ds9display import Ds9Display
 from azcam_console.tools.focus import FocusConsole
+from azcam_console.server_comm import ServerCommunication
 
 
 def setup():
@@ -52,6 +53,8 @@ def setup():
 
     # console tools
     create_console_tools()
+    azcam.db.server = ServerCommunication()
+    azcam.db.cli["server"] = azcam.db.server
 
     # focus script
     focus = FocusConsole()
@@ -59,8 +62,7 @@ def setup():
     focus.focus_type = "absolute"
 
     # try to connect to azcamserver
-    server = azcam.db.tools["server"]
-    connected = server.connect(port=2402)
+    connected = azcam.db.server.connect(port=2402)
     if connected:
         azcam.log("Connected to azcamserver")
     else:
