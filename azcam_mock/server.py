@@ -120,7 +120,7 @@ def setup():
     azcam.db.monitor.register()
 
     # GUIs
-    if 1:
+    if 0:
         import azcam_mock.start_azcamtool
 
     # finish
