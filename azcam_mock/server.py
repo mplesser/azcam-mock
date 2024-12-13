@@ -130,3 +130,5 @@ def setup():
 # start
 setup()
 from azcam.cli import *
+
+pp()

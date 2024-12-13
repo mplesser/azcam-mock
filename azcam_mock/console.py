@@ -56,7 +56,6 @@ def setup():
 
     # console tools
     create_console_tools()
-    server = ServerCommunication()
 
     # observe
     observe = ObserveCli()
@@ -67,7 +66,7 @@ def setup():
     focus.focus_type = "absolute"
 
     # try to connect to azcamserver
-    connected = server.connect(port=2402)
+    connected = azcam.db.server.connect(port=2402)
     if connected:
         azcam.log("Connected to azcamserver")
     else:
