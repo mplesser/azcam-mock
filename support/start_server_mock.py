@@ -4,8 +4,8 @@ Python process start file
 
 import subprocess
 
-OPTIONS = "-system vatt4k"
-CMD = f"ipython --ipython-dir=/data/ipython --profile azcamserver -i -m azcam_vatt4k.server -- {OPTIONS}"
+OPTIONS = ""
+CMD = f"ipython --ipython-dir=/data/ipython --profile azcamserver -i -m azcam_mock.server -- {OPTIONS}"
 
 p = subprocess.Popen(
     CMD,
