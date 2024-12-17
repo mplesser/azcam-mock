@@ -112,7 +112,7 @@ def setup():
     # web server
     webserver = WebServer()
     webserver.port = 2403
-    webserver.logcommands = 1
+    webserver.logcommands = 0
     webserver.logstatus = 0
     webserver.start()
 
