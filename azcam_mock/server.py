@@ -9,7 +9,7 @@ import sys
 
 import azcam
 import azcam.utils
-import azcam.server
+from azcam.server import setup_server
 import azcam.shortcuts
 from azcam.cmdserver import CommandServer
 from azcam.header import System
@@ -30,6 +30,8 @@ def setup():
         datafolder = sys.argv[i + 1]
     except ValueError:
         datafolder = None
+
+    setup_server()
 
     # define folders for system
     azcam.db.systemname = "mock"
@@ -103,11 +105,10 @@ def setup():
     azcam.db.parameters.update_pars()
 
     # define and start command server
-    cmdserver = CommandServer()
-    cmdserver.port = 2402
-    azcam.log(f"Starting cmdserver - listening on port {cmdserver.port}")
+    azcam.db.cmdserver.port = 2402
+    azcam.log(f"Starting cmdserver - listening on port {azcam.db.cmdserver.port}")
     azcam.db.api.initialize()
-    cmdserver.start()
+    azcam.db.cmdserver.start()
 
     # web server
     webserver = WebServer()
