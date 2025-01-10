@@ -114,7 +114,6 @@ def setup():
     webserver = WebServer()
     webserver.port = 2403
     webserver.logcommands = 0
-    webserver.logstatus = 0
     webserver.start()
 
     # azcammonitor
