@@ -1,6 +1,6 @@
 [project]
 name = "azcam-mock"
-version = "24.0"
+version = "25.0"
 description = "Azcam environment for testing (mocking)"
 license = { file = "LICENSE" }
 readme = "README.md"
